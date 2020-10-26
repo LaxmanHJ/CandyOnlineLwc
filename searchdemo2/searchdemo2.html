@@ -1,0 +1,69 @@
+<template>
+	<lightning-card title="Contacts" icon-name="standard:contact">
+		<div class="slds-card__body_inner">
+			
+			<lightning-input type="search"
+				onchange={handleSearchTermChange}
+				variant="label-hidden"
+				class="slds-var-m-bottom_small"
+				label="Search"
+				placeholder="Search for contacts"
+				value={strConName}>
+			</lightning-input>
+
+
+			<div class="slds-clearfix" style="padding-bottom:5px;">
+				<div class="slds-float_right slds-grid slds-gutters" >
+					<div class="slds-col" >
+						<div class="slds-select_container">
+							<select class="slds-select" name = "optionSelect" onchange={changeHandler} >
+								<option value="AZ">Sort A-Z</option>
+								<option value="ZA">Sort Z-A</option>
+							</select> 
+						</div>
+					</div>
+					<div class="slds-col" >
+							<lightning-icon  icon-name="utility:tile_card_list" alternative-text="grid"
+							title="grid" size="small" onclick={displaygrid} data-id="gridView"></lightning-icon>
+					</div>
+					<div class="slds-col">
+							<lightning-icon icon-name="utility:list" alternative-text="list"
+							title="list" size="small" onclick={displayList} data-id="listView"></lightning-icon>
+					</div>
+				</div>
+			</div>
+
+			<template if:true={isgridView}>
+					<div class="slds-grid slds-wrap" style="padding-left:15px;border:3px;">
+						<template for:each={con.data} for:item="contact">
+							<div class="slds-col slds-size_1-of-3" key ={contact.Id}>
+								<c-contact-tile
+												conid={contact.Id}
+												name={contact.Name}
+												email={contact.Email}
+												phone={contact.Phone} 
+												title={contact.Title}>
+									</c-contact-tile>
+
+								</div>
+							</template>
+						</div>
+			</template>     
+			<template if:false={isgridView}>
+
+
+					<template for:each={con.data} for:item="contact">
+						<div key ={contact.Id}>
+							<c-contact-list-view
+											conid={contact.Id}
+											name={contact.Name}
+											email={contact.Email}
+											phone={contact.Phone} 
+											title={contact.Title}>
+										</c-contact-list-view>
+									</div>
+						</template>
+			</template>			
+		</div>
+	</lightning-card>
+</template>
