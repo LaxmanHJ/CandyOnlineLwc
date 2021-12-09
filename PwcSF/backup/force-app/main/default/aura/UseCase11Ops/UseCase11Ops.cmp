@@ -1,0 +1,104 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" 
+                controller="Usecase8ConrollerApex">
+    <!-- attribute declaration -->
+    <aura:attribute name="listOfcontacts" type="List"/>
+    
+    <!-- hadlerMethod declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:card iconName="standard:contact">
+        <aura:set attribute="title">
+            <p>Contacts</p>
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:buttonGroup class="slds-float_right" >
+                <lightning:button label="New"></lightning:button>
+                <lightning:button label="Import"></lightning:button>
+                <lightning:button label="Add to Campaign"></lightning:button>
+                <lightning:button label="Send List Email"></lightning:button>
+                <lightning:button label="Printable View"></lightning:button>
+                <!--  <lightning:buttonMenu iconName="utility:down">
+                    <lightning:menuItem label="Send List Email"/>      
+                    <lightning:menuItem label="Prinatble View"/> 
+                </lightning:buttonMenu>  -->
+            </lightning:buttonGroup>
+            
+            <div >
+                    <input type="text" class="form-control"
+                       placeholder="Search" aria-describedby="listviewSearchTooltip-101" onkeyup="{!c.searchKeyChange}"/>
+                <lightning:buttonGroup class="slds-float_right">
+                    <div class="u2">
+                        <lightning:buttonIcon iconName="utility:settings" alternativeText="Table"/>
+                        <lightning:buttonIcon iconName="utility:table" alternativeText="settings"/>
+                        <lightning:buttonIcon iconName="utility:refresh" alternativeText="Refresh"/>
+                        <lightning:buttonIcon iconName="utility:edit" alternativeText="Edit"/>
+                        <lightning:buttonIcon iconName="utility:chart" alternativeText="Chart"/>
+                        <lightning:buttonIcon iconName="utility:filterList" alternativeText="filterList"/>
+                    </div>
+                </lightning:buttonGroup>
+            </div>        
+            
+        </aura:set>
+    </lightning:card>
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-title--caps">
+                 <th scope="col">
+                    <div class="slds-truncate" title=" Sl.no"> Sl.No</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title=" Name"> Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Account Name">Account Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Title">Title</div>
+                </th>
+                   <th scope="col">
+                    <div class="slds-truncate" title="Email">Email</div>
+                </th>
+                   <th scope="col">
+                    <div class="slds-truncate" title="Phone">Phone</div>
+                </th>
+                 <th scope="col">
+                    <div class="slds-truncate" title="Owner">Owner</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.listOfcontacts}" var="ct"  indexVar="i">
+                <tr>
+                      <td data-label="Sl.no">
+                        <div class="slds-truncate" title="{! Serial }">{! i+1 }</div>
+                    </td>
+                    
+                    <th scope="row" data-label="First Name"  keyField="id" style="color:skyblue;">
+                        <div class="slds-truncate" title="{! ct.Name }">{! ct.Name }</div>
+                    </th>
+                    <td data-label="Last Name" style="color:skyblue;">
+                        <div class="slds-truncate" title="{! ct.account.name }">{! ct.Account.Name }</div>
+                    </td>
+                    <td data-label="Email">
+                        <div class="slds-truncate" title="{! ct.Title }">{! ct.Title }</div>
+                    </td>
+                     <td data-label="Email"  style="color:skyblue;">
+                        <div class="slds-truncate" title="{! ct.Email }">{! ct.Email }</div>
+                    </td>
+                     <td data-label="Email">
+                        <div class="slds-truncate" title="{! ct.Phone }">{! ct.Phone }</div>
+                    </td>
+                      <td data-label="Email">
+                        <div class="slds-truncate" title="{owner }">Ljee</div>
+                    </td>
+                    <td>
+                     <lightning:buttonMenu iconName="utility:down">
+                    <lightning:menuItem label="Edit"/>      
+                    <lightning:menuItem label="Delete"/> 
+                     <lightning:menuItem label="Change Owner"/> 
+                </lightning:buttonMenu>  
+                    </td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

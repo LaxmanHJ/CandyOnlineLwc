@@ -1,0 +1,152 @@
+<template>
+<lightning-card variant="narrow"
+icon-name="standard:account">
+<h1 slot="title">Account</h1>
+<h2 slot="title" style="font-weight: 700;">{accountName}</h2>
+</lightning-card>
+<lightning-card>
+    <lightning-layout horizontal-align="space">
+
+            <lightning-layout-item> Type <br />{accountType} </lightning-layout-item>
+            <lightning-layout-item>Phone <br /><p style="color:blue;">{accountPhone}</p> </lightning-layout-item>
+            <lightning-layout-item>Website <br /><p style="color:blue;">{accountWebsite}</p></lightning-layout-item>
+            <lightning-layout-item>Owner <br /><p style="color:blue;">Laxman jeergal</p></lightning-layout-item>
+            <lightning-layout-item>Account Site <br /> {accountSite}</lightning-layout-item>
+            <lightning-layout-item>Industry <br />{accountIndustry} </lightning-layout-item>
+    
+    </lightning-layout>
+</lightning-card>
+<!--
+<c-accountalias-comp2></c-accountalias-comp2>-->
+
+
+<lightning-tabset>
+    <lightning-tab label="Realated">
+
+<lightning-card>
+<lightning-card title="Conatcts" icon-name="standard:contact">
+    <div slot="actions">
+        <lightning-button label="New" slot="actions" onclick={handlePopup}></lightning-button>
+    </div>
+</lightning-card>
+    <lightning-card >   
+    <div class="slds-m-around_medium">
+        <template if:true={contacts.data}>
+            <template for:each={contacts.data} for:item="con">
+
+            <lightning-card title={con.Name} icon-name="custom:custom63" key={con.Id}>
+            </lightning-card>
+
+                <p key={con.Id}>Title : {con.Title}</p>
+                <p key={con.Id}>Email : {con.Email}</p>
+                <p key={con.Id}>Phone : {con.Phone}</p>
+            </template>
+
+        </template>
+        <template if:true={contacts.error}>
+            {contacts.error}
+        </template>
+    </div>
+    </lightning-card> 
+<lightning-card title="Opportunities" icon-name="standard:opportunity">
+    <h1 slot="title"></h1>
+    <div slot="actions">
+        <lightning-button label="New" slot="actions" onclick={handlePopup}></lightning-button>
+    </div>
+
+</lightning-card>
+    <lightning-card>
+    <div class="slds-m-around_medium">
+        <template if:true={opps.data}>
+            <template for:each={opps.data} for:item="op">
+                <p key={op.Id} style="font-weight: 500;color:cadetblue"> {op.Name}</p>
+                <p key={op.Id}>Stage : {op.StageName}</p>
+                <p key={op.Id}>Amount : {op.Amount}</p>
+            </template>
+        </template>
+        <template if:true={opps.error}>
+            {opps.error}
+        </template>
+    </div>
+</lightning-card>
+</lightning-card>
+</lightning-tab>
+
+
+<lightning-tab label="Details">
+    Hiii
+</lightning-tab>
+</lightning-tabset>
+<!--<lightning-button label="show popup" onclick={handlePopup}></lightning-button>
+-->
+<div class="chart slds-m-around_medium" lwc:dom="manual"></div>
+    
+    <template if:true={modalPopUpToggleFlag}>
+    
+      <section
+        id="modal"
+        role="dialog"
+        tabindex="-1"
+        aria-labelledby="modal-heading-01"
+        aria-modal="true"
+        aria-describedby="modal-content-id-1"
+        class="slds-modal slds-fade-in-open"
+      >
+        <div class="slds-modal__container">
+          <header class="slds-modal__header">
+            <button
+              class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+              title="Close"
+            >
+              <svg
+                class="slds-button__icon slds-button__icon_large"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"
+                ></use>
+              </svg>
+              <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+              Modal Header
+            </h2>
+          </header>
+          <div
+            class="slds-modal__content slds-p-around_medium"
+            id="modal-content-id-1"
+          >
+            <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+              <lightning-record-edit-form
+                id="recordViewForm"
+                object-api-name="Account"
+              >
+                <lightning-messages></lightning-messages>
+                <lightning-input-field field-name="Name"> </lightning-input-field>
+                <lightning-input-field field-name="Industry">
+                </lightning-input-field>
+                <lightning-input-field field-name="Phone"> </lightning-input-field>
+  
+                <lightning-button
+                  type="submit"
+                  label="Update record"
+                  class="slds-m-top_medium"
+                >
+                </lightning-button>
+              </lightning-record-edit-form>
+            </div>
+          </div>
+          <footer class="slds-modal__footer slds-modal__footer_directional">
+            <button class="slds-button slds-button_neutral" onclick={handleSkip}>
+              Skip This Step
+            </button>
+          </footer>
+        </div>
+      </section>
+      <div
+        class="slds-backdrop slds-backdrop_open modalBackdrops"
+        id="modalBackdrops"
+      ></div>
+    </template>
+
+  </template>

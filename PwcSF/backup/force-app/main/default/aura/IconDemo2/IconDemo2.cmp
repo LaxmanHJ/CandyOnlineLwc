@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <div class="u2">
+        <lightning:buttonGroup>
+            <lightning:buttonIcon iconName="utility:settings" alternativeText="Table"/>
+            <lightning:buttonIcon iconName="utility:table" alternativeText="settings"/>
+            <lightning:buttonIcon iconName="utility:refresh" alternativeText="Refresh"/>
+            <lightning:buttonIcon iconName="utility:edit" alternativeText="Edit"/>
+            <lightning:buttonIcon iconName="utility:chart" alternativeText="Chart"/>
+            <lightning:buttonIcon iconName="utility:filterList" alternativeText="filterList"/>
+        </lightning:buttonGroup>
+    </div>
+</aura:component>

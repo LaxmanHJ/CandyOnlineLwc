@@ -1,0 +1,22 @@
+<aura:component >
+    <aura:attribute name="empname" type="String"  />
+    <aura:attribute name="empsalary" type="Decimal"  />
+    <aura:attribute name="empcity" type="String"  />
+    <aura:attribute name="products" type="String[]" default="['Laptop','Mobile','Desktop','scanner']"/>
+    
+    <div class="class1">
+        <p >EmplyoeeName : {!v.empname}</p>
+        <p >EmplyoeeSalary : {!v.empsalary}</p>
+        <p >EmplyoeeCity : {!v.empcity}</p>
+    </div>
+    
+    <div class="class2">
+        <aura:iteration items="{!v.products}" var="m">
+            <ul>
+                <li>{!m}</li>
+            </ul>
+            
+            
+        </aura:iteration>
+    </div>
+</aura:component>

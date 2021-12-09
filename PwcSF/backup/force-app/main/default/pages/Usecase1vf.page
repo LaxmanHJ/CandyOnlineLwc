@@ -1,0 +1,61 @@
+<apex:page controller="Usecase1controller">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel > Enter Account Name</apex:outputLabel>
+                    <apex:inputText value="{!accName}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Get Related Data" action="{!getRelatedData}" reRender="res" />
+                <apex:commandButton value="Refresh" action="{!refresh}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock id="res">
+            <table border="1px" rules="frames" padding="5px">
+                <tr>
+                    <th> SNo </th>
+                    <th> Account Name</th>
+                    <th> Total Contacts</th>
+                    <th> Total Opportunities</th>
+                    <th> Total Cases</th>
+                </tr>
+                <tr>
+                    <td> <apex:commandLink value="{!sno}" /></td>
+                    <td> <apex:commandLink value="{!accName}" /></td>
+                    <td> <apex:commandLink value="{!contacts}" action="{!getContacts}" reRender="res2"/></td>
+                    <td> <apex:commandLink value="{!opportunities}" action="{!getOpp}" reRender="res3"/></td>
+                    <td> <apex:commandLink value="{!cases}" action="{!getCases}" reRender="res4"/></td>
+                </tr>
+            </table>
+        </apex:pageBlock>
+        <apex:pageBlock title="Contacts ({!contacts})" id="res2"  >
+            <apex:pageBlockTable value="{!conList}" var="c" >
+                <apex:column headerValue="First Name"> 
+                    <apex:commandLink value="{!c.firstName}" action="{!goToContact}"> 
+                        <apex:param name="contact" value="{!c.Id}" assignTo="{!contactId}"  />
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column headerValue="Id">{!c.Id}</apex:column>
+                <apex:column headerValue="LastName"><apex:commandLink value="{!c.lastName}"/> </apex:column>
+                <apex:column headerValue="Email">{!c.Email}</apex:column>
+                <apex:column headerValue="Phone">{!c.Phone}</apex:column>
+            </apex:pageBlockTable> 
+        </apex:pageBlock>
+        <apex:pageBlock title="Opportunities ({!opportunities})" id="res3">
+            <apex:pageBlockTable value="{!oppList}" var="op">
+                <apex:column headerValue="Name"> <apex:commandLink value="{!op.Name}" /> </apex:column>
+                <apex:column headerValue="Stage">{!op.stageName}</apex:column>
+                <apex:column headerValue="Amount">{!op.Amount}</apex:column>
+            </apex:pageBlockTable> 
+        </apex:pageBlock>
+        <apex:pageBlock title="Cases ({!cases})" id="res4" >
+            <apex:pageBlockTable value="{!caseList}" var="cs">
+                <apex:column headerValue="Name"> <apex:commandLink value="{!cs.caseNumber}" /></apex:column>
+                <apex:column headerValue="Status">{!cs.Status}</apex:column>
+                <apex:column headerValue="Subject">{!cs.Subject}</apex:column>
+            </apex:pageBlockTable> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

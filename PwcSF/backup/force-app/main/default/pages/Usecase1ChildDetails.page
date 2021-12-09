@@ -1,0 +1,71 @@
+<apex:page controller="accsearchuse1">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText value="{!search}" label="Enter Account Name"/>
+                <apex:commandButton action="{!showdetails}" value="Get Related Data"/>
+            </apex:pageBlockSection>
+            
+            
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockTable value="{!res}" var="c">
+                    
+                    <apex:column value="{!c.name}"/>
+                    <!--<apex:column value="{!c.contacts}"/>-->
+                    <apex:column headerValue="total contacts">
+                        <!--<apex:outputLabel value="total contacts"/>-->
+                        
+                        <apex:outputpanel id="counter">
+                            <apex:outputText value="{!sum}" />
+                            <apex:actionSupport event="onclick" 
+                                                action="{!showdetails}" 
+                                                rerender="counter1" status="counterStatus"/>
+                            
+                        </apex:outputpanel>
+                        
+                        
+                    </apex:column>
+                    <apex:column headerValue="Total Opps">
+                        <!--<apex:outputLabel value="total contacts"/>-->
+                        <apex:outputText value="{!sum1}"/>
+                    </apex:column>
+                    <apex:column headerValue="Total Cases">
+                        <!--<apex:outputLabel value="total contacts"/>-->
+                        <apex:outputText value="{!sum2}"/>
+                        
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockTable value="{!res}" var="c">
+
+                    <apex:column value="{!c.name}"/>
+
+                    <apex:column headerValue="FirstName ">
+                        <apex:outputText value="{!firstname}"/>
+                    </apex:column>
+                    <apex:column headerValue="LastName ">
+                        <apex:outputText value="{!lastname}"/>
+                    </apex:column>
+                    <apex:column headerValue="Email ">
+                        <apex:outputText value="{!email}"/>
+                    </apex:column>
+                    <apex:column headerValue="Phone ">
+                        <apex:outputText value="{!phone}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

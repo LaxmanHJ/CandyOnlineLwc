@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="key" type="String" /> 
+    <lightning:input type="text" name="searchKey" label="Enter" aura:id="searchKey" onchange="{!c.searchKeyChange}" placeholder="Search" />          
+   	<aura:registerEvent name="loadMyEvent" type="c:Resultevt"/>
+</aura:component>

@@ -1,0 +1,15 @@
+<apex:page controller="LinkedInApi">
+    <apex:form >
+        <apex:commandButton value="call Linkedin" action="{!getCode}"/>
+        
+        <apex:commandButton value="get code" action="{!getcodeurl}" reRender="res"/>
+        <apex:commandButton value="get access token" action="{!getaccesstoken}" reRender="res"/>
+        <apex:commandButton value="show details" action="{!getmemdetails}" reRender="res"/>
+        <apex:pageBlock id="res">
+            Code:{!linkedcode}<br/>
+            Token:{!accesstoken}<br/>
+            details:{!result}
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

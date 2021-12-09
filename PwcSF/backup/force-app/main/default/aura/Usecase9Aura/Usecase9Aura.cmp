@@ -1,0 +1,32 @@
+<aura:component controller="Usecase8ConrollerApex">
+    
+     <aura:attribute name="accInput" type="string"/>
+      <aura:attribute name="acc1" type="Account" />
+
+    
+    <lightning:card iconName="standard:account">
+        <lightning:input label="Enter Industry Name" value="{!v.accInput}" />
+        <lightning:button variant="Brand" label="Go" title="GO" onclick="{!c.doInit }" />
+
+        <aura:set attribute="title">
+            <p>Account</p>
+            <b><h1></h1></b>
+                <li><a>{!v.acc1.Name}</a></li>
+        </aura:set>
+        <br/>
+        
+    	<aura:iteration var="acc" items="{!v.acc1}">
+       			 <ui:outputText value="{!'Account Name :' + acc.Name}"/><br/>
+             	<ui:outputText value="{!'Industry :' + acc.Industry}"/><br/>
+       			 <ui:outputText value="{!'Phone :'+ acc.Phone}"/><br/>
+
+        </aura:iteration>
+
+    
+        </lightning:card>
+
+    
+    
+    <div></div>
+
+</aura:component>

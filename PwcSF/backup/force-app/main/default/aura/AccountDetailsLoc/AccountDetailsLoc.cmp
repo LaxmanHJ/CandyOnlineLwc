@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<br></br><p class="p3class">Location:Banglore</p>
+</aura:component>

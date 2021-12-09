@@ -1,0 +1,5 @@
+<apex:page controller="xmlusecase3">
+    <apex:pageBlock >
+    	{!xmlString}
+    </apex:pageBlock>
+</apex:page>

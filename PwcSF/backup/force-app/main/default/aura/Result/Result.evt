@@ -1,0 +1,8 @@
+<aura:event type="APPLICATION" description="Event template" >
+<aura:attribute name="pass_name" type="string"/>
+ <aura:attribute name="pass_salary" type="Decimal"/>
+<aura:attribute name="pass_city" type="string"/>
+    <aura:attribute name="pass_submit" type="boolean"/>
+
+
+</aura:event>

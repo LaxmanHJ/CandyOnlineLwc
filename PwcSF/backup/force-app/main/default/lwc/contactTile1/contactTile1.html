@@ -1,0 +1,9 @@
+<template>
+    <div style="margin-top:0px">
+    <img src={pass_val.ImageUrl__c} alt="profilepic" style="float:left;width:85px;height:100px;border-radius:15px;padding:10px" class="image"/>  
+    <a onclick={redirectToContactPage} data-id={pass_val.Id}>{pass_val.Name}</a><br/> 
+    {pass_val.Title}<br/>
+    {pass_val.Phone}<br/>
+    {pass_val.Email}<br/>
+</div>
+</template>

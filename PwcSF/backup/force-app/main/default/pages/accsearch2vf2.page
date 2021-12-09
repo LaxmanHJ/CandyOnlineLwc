@@ -1,0 +1,26 @@
+<apex:page controller="accsearchuse2">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockTable value="{!condemo}" var="c1">
+                    
+                    <!--<apex:column value="{!c1.name}"/>-->
+                    
+                    <apex:column headerValue="FirstName ">
+                        <apex:outputText value="firstname"/>
+                    </apex:column>
+                    <apex:column headerValue="LastName ">
+                        <apex:outputText value="{!c1.LastName}"/>
+                    </apex:column>
+                    <apex:column headerValue="Email ">
+                        <apex:outputText value="{!c1.email}"/>
+                    </apex:column>
+                    <apex:column headerValue="Phone ">
+                        <apex:outputText value="{!c1.phone}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

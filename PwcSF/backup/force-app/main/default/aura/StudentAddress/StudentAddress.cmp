@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<h1>Address</h1>
+    <p>State</p>
+    <p>City</p>
+</aura:component>

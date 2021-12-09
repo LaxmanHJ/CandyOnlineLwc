@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Custom Event Example.">
+            <lightning-layout>
+                <lightning-layout-item>
+                    {messageFrmChild}<br/>
+                    <!-- Declaratively listen custom event. Use 'on' prefix before event name declared in child component named as 'displaymessage' -->
+                    <c-custom-event-child-comp ondisplaymessage={handelMessageFromChild}></c-custom-event-child-comp>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+</template>

@@ -1,0 +1,43 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" 
+                controller="Usecase8ConrollerApex">
+    <!-- attribute declaration -->
+    <aura:attribute name="listOfcontacts" type="List"/>
+    
+    <!-- hadlerMethod declaration -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+        <lightning:card iconName="standard:contact">
+              <aura:set attribute="title">
+            <p>Contacts</p>
+           </aura:set>
+    </lightning:card>
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-title--caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="First Name">First Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Last Name">Last Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Email">Email</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.listOfcontacts}" var="ct">
+                <tr>
+                    <th scope="row" data-label="First Name">
+                        <div class="slds-truncate" title="{! ct.FirstName }">{! ct.FirstName }</div>
+                    </th>
+                    <td data-label="Last Name">
+                        <div class="slds-truncate" title="{! ct.LastName }">{! ct.LastName }</div>
+                    </td>
+                    <td data-label="Email">
+                        <div class="slds-truncate" title="{! ct.Email }">{! ct.Email }</div>
+                    </td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

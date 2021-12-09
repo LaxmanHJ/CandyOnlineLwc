@@ -1,0 +1,25 @@
+<template>
+    <template if:false={flagtile}>
+    <div class="csscard">
+        <div style="padding-top:4px;text-align:center">
+    <img src={pass_val.image__c} onclick={navigateToDetailsPage} alt="profilepic" style="width:70%;height:150px;padding:10px" class="image"/>  
+    <p style="padding-top:4px;text-align:center">
+        <a onclick={navigateToDetailsPage} data-id={pass_val.Id}><b style="color:red">{pass_val.Name}</b></a><br/>  
+    <b style="color:black">${pass_val.Price__c}</b>
+</p>
+    </div>
+</div>
+</template>
+
+<template if:true={flagtile}>
+    <div class="csslist">
+        <div style="padding-top:4px;text-align:center">
+    <img src={pass_val.image__c} onclick={navigateToDetailsPage} alt="profilepic" style="width:70%;height:150px;padding:10px" class="image"/>  
+    <p style="padding-top:4px;text-align:center">
+        <a onclick={navigateToDetailsPage} data-id={pass_val.Id}><b style="color:red">{pass_val.Name}</b></a><br/>  
+    <b style="color:black">${pass_val.Price__c}</b>
+</p>
+    </div>
+</div>
+</template>
+</template>

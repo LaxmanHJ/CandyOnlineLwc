@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:registerEvent name="newCarAccident" type="c:carAccident"/>
+    <div class="divstyle1">Car Accident Example: Fire Event by Clicking on Button</div>
+    <ui:button label="Accident Took Place" press="{!c.fireCarAccidentEvent }"/>
+</aura:component>

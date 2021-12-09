@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <h1>PersonalDetails</h1>
+    <p>Name</p>
+    <p>Age</p>
+    <p>Height</p>
+    <c:StudentCourses/>
+</aura:component>

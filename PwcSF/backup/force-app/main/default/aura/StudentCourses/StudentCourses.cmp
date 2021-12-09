@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<h1>CouseName</h1>
+    <p>Salesforce development</p>
+    <p>Aura Lightning</p>
+	<p>LWC</p>
+</aura:component>

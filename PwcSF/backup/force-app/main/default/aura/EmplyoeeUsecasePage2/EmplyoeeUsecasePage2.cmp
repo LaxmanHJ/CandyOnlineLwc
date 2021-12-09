@@ -1,0 +1,25 @@
+<aura:component >
+    <aura:attribute name="Get_name" type="String"/>
+    <aura:attribute name="Get_salary" type="Decimal"/>
+    <aura:attribute name="Get_city" type="String"/>
+    <aura:attribute name="Get_submit" type="boolean" default="false"/>
+    
+    
+    <aura:handler event="c:Result" action="{!c.getvaluefromApplicationEvent}"/>
+    
+    <aura:if  isTrue="{!v.Get_submit}" >
+        <div class="box">
+            
+            <h1>Your Details</h1>
+            <p>	Name: {!v.Get_name}</p><br/>
+            <p>Final salary:{!v.Get_salary}</p><br/>
+            <p>  city :{!v.Get_city}</p>
+        </div>
+        <aura:set attribute="else">
+            <p>your details will display here</p>
+        </aura:set>
+    </aura:if>
+    
+    
+    
+</aura:component>

@@ -1,0 +1,62 @@
+<template>
+
+
+    <lightning-card>
+    <lightning-breadcrumbs>
+        <lightning-breadcrumb
+            label="Home"
+            href=https://laxmanjee-dev-ed.lightning.force.com/lightning/n/Pagination>
+        </lightning-breadcrumb>
+        
+    </lightning-breadcrumbs>
+    </lightning-card>
+
+    
+    <lightning-card>
+        <lightning-button label="reset" variant="brand" onclick={resethandler} class="slds-float_right slds-p-right_xx-small"></lightning-button><br/>
+        <lightning-input type="search" class="slds-p-left_xx-small slds-p-right_xx-small" onchange={handleTextChange} value={searchKey} label="Search store"></lightning-input>
+  
+              <!--Load categories from apex in Select List -->
+     <lightning-card title="Categories">
+        <template if:true={categoriesOptionList}>
+            <div class="slds-m-around_medium">
+                    <select onchange={handleCategoryChange}>
+                        <option value="undefined">Select</option>
+                        <template for:each={categoriesOptionList} for:item="item">
+                            <option value={item.value} key={item.value}>{item.label}</option>
+                        </template>
+                    </select>             
+            </div>
+        </template>
+    </lightning-card>
+         <!--Load brands from apex in Select List -->
+         <lightning-card title="Brands">
+            <template if:true={brandOptionList}>
+                <div class="slds-m-around_medium">
+                        <select onchange={handleBrandChange} >
+                            <option value="undefined">Select</option>
+                            <template for:each={brandOptionList} for:item="item">
+                                <option value={item.value} key={item.value}>{item.label}</option>
+                            </template>
+                        </select>    
+                              
+                </div>
+            </template>
+        </lightning-card>
+
+     <!--Load makers from apex in Select List -->
+     <lightning-card title="Maker">
+        <template if:true={makersOptionList}>
+            <div class="slds-m-around_medium">
+                    <select onchange={handleMakerChange}>
+                        <option value="undefined">Select</option>
+                        <template for:each={makersOptionList} for:item="item">
+                            <option value={item.value} key={item.value}>{item.label}</option>
+                        </template>
+                    </select>    
+                              
+            </div>
+        </template>
+    </lightning-card>
+</lightning-card>
+</template>

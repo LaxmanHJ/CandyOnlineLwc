@@ -1,0 +1,11 @@
+.THIS img {
+    width: 100px;
+    float:"left";
+    border-radius:5px;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.THIS .displayed {
+    margin-left: "auto";
+    margin-right: "auto";
+}

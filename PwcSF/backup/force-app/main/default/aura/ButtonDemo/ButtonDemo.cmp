@@ -1,0 +1,29 @@
+<!--<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+   <lightning:button label="button 1"></lightning:button>
+   <lightning:button label="close" iconName="action:close"/> 
+   <lightning:button label="audio" iconName="action:announcement" iconPosition="right"/>
+   <lightning:button label="Add user" iconName="utility:adduser"/>
+   <lightning:button label="not active" disabled="true"/>
+   <lightning:button label="download" iconName="action:download" iconPosition="right"/>
+   <lightning:button label="base" variant="base"/>
+   <lightning:button label="neutral" variant="neutral"/>    
+   <lightning:button label="brand" variant="brand"/>
+   <lightning:button label="destructive" variant="destructive"/>
+   <lightning:button label="inverse" variant="inverse"/>
+   <lightning:button label="success" variant="success" title="done successful"/>
+</aura:component> -->
+
+<aura:component>
+
+    <lightning:buttonGroup >
+        <lightning:button label="New"></lightning:button>
+        <lightning:button label="Import"></lightning:button>
+        <lightning:button label="Add to Campaign"></lightning:button>
+         <lightning:button label="Change Status"></lightning:button>
+         <lightning:button label="Change Owner"></lightning:button>
+		<lightning:buttonMenu iconName="utility:down">
+            <lightning:menuItem label="Send List Email"/>      
+            <lightning:menuItem label="Prinatble View"/>
+        </lightning:buttonMenu>
+    </lightning:buttonGroup>
+</aura:component>

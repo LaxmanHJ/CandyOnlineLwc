@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <lightning:card variant="Narrow" title="Narrow Card Header" iconName="standard:account" footer="Card Footer">
+        <aura:set attribute="actions">
+            <lightning:button label="Follow"/>
+            <lightning:button label="New Conatct"/>
+            <lightning:button label="New Note"/>
+            <lightning:button label="New Case"/>
+            
+            <lightning:buttonIcon iconName="utility:down" variant="border-filled" alternativeText="Show More"/>
+        </aura:set>
+        <aura:set attribute="body">
+            
+            <div class="outclass" >
+                <p class="inclass"> Card  </p>
+            </div>
+            <div>
+                <p class="inclass"> Card1  </p>
+            </div>
+        </aura:set>
+    </lightning:card>
+</aura:component>

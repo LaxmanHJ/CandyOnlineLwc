@@ -1,0 +1,9 @@
+.THIS.box {
+    
+    margin:20px;
+    border-radius:15px;
+     border-color:black;
+    background:lightblue;
+    width:40%;
+    padding:20px
+}

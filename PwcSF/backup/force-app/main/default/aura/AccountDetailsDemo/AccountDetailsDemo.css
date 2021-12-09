@@ -1,0 +1,25 @@
+.THIS.divclass {
+    border-radius: 15px;
+    border-color:black;
+    background:lightblue;
+    margin-right:40%;
+    margin-left:40%;
+    margin-top:2%;
+    padding:20px;
+    text-align: center;
+
+}
+.THIS .p1class{
+    color:red;
+    text-decoration:underline;
+}
+
+.THIS .p2class{
+       font-size:18px;
+    	text-align: justify;
+
+    }
+.THIS .p3class{
+        	text-align: justify;
+
+}

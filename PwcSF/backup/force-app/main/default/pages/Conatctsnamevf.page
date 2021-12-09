@@ -1,0 +1,36 @@
+<apex:page controller="SelectOptionClass">
+    <apex:form >
+        <apex:sectionHeader title="selectList example"/>
+        <apex:selectList size="1" value="{!selectedOption}">
+            <apex:selectOption itemLabel="Chn" itemValue="Chennai"></apex:selectOption>
+            <apex:selectOption itemLabel="Bng" itemValue="Bangeluru"></apex:selectOption>
+            <apex:selectOption itemLabel="Pune" itemValue="Pune"></apex:selectOption>
+            <apex:selectOption itemLabel="DLH" itemValue="Delhi"></apex:selectOption>
+            <apex:actionSupport action="{!callApex}" event="onchange" reRender="res"/>
+        </apex:selectList>
+        
+        <apex:sectionHeader title="selectList - selectOptions example"/>
+        <apex:selectList size="1" >
+            <apex:selectOptions value="{!options}"/>
+        </apex:selectList>
+        
+        <apex:sectionHeader title="select Checkbox example"/>
+        <apex:selectCheckboxes >
+            <apex:selectOption itemLabel="Chn" itemValue="Chennai"></apex:selectOption>
+            <apex:selectOption itemLabel="Bng" itemValue="Bangeluru"></apex:selectOption>
+            <apex:selectOption itemLabel="Pune" itemValue="Pune"></apex:selectOption>
+            <apex:selectOption itemLabel="DLH" itemValue="Delhi"></apex:selectOption>
+        </apex:selectCheckboxes>
+        
+        <apex:sectionHeader title="selectRadio example"/>
+        <apex:selectRadio >
+            <apex:selectOption itemLabel="Chn" itemValue="Chennai"></apex:selectOption>
+            <apex:selectOption itemLabel="Bng" itemValue="Bangeluru"></apex:selectOption>
+            <apex:selectOption itemLabel="Pune" itemValue="Pune"></apex:selectOption>
+            <apex:selectOption itemLabel="DLH" itemValue="Delhi"></apex:selectOption>
+       </apex:selectRadio>
+    </apex:form>
+    <apex:pageBlock id="res">
+    	{!selectedOption}
+    </apex:pageBlock>
+</apex:page>

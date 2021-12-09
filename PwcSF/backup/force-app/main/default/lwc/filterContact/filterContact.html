@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Search Contact" icon-name="standard:contact">
+                    <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                    <lightning-input type="search"
+                                                     style="text-align: center;width: 400px"  
+                                                     placeholder="Enter Name to Search.."
+                                                     onchange={handleKeyChange} 
+                                                     class="slds-m-bottom_small"
+                                                     value={searchKey}></lightning-input>
+                            </div>
+                      </div> 
+    </lightning-card>
+</template>

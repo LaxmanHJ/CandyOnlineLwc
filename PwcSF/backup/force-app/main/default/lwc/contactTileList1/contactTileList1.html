@@ -1,0 +1,22 @@
+<template>
+    <template if:true={contacts.data}>
+        <lightning-card>
+        <div class="slds-grid slds-wrap">
+          <template for:each={contacts.data} for:item="contact">
+              <div key={contact.Id} class="slds-col slds-size_4-of-12" style="float:left">
+                  <c-contact-tile
+                        con-id={contact.Id}
+                        name={contact.Name}
+                        email={contact.Email}
+                        phone={contact.Phone} 
+                        title={contact.Title}>
+                    </c-contact-tile>
+              </div>
+          </template>
+          <template if:true={contacts.error}>
+               <h1>Search not found</h1>
+          </template>
+        </div>
+      </lightning-card>
+      </template>
+</template>

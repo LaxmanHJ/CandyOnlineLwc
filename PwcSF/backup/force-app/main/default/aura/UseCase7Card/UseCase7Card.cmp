@@ -1,0 +1,32 @@
+<aura:component>
+    <lightning:card  iconName="standard:account" >
+        <aura:set attribute="title">
+            <p>Account</p>
+            <b><h1></h1></b>
+            <p>hhjk</p>
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:buttonGroup class="slds-float_right">
+                <lightning:button label="New" variant="brand" />
+                <lightning:button label="Save" variant="brand" />
+                <lightning:button label="Delete" variant="brand" />
+                
+                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-button_last">
+                    <button class="slds-button slds-button_icon slds-button_icon-border-inverse" title="More Actions">
+                        
+                        <span class="slds-assistive-text">More Actions</span>
+                    </button>
+                </div>
+            </lightning:buttonGroup>
+          
+        </aura:set>
+        
+    </lightning:card>
+    
+      <div style="padding:10px;font-size:18px">
+                <ui:outputText value="Account Name: "/><br/>
+                <ui:outputText value="Industry :"/><br/>
+                <ui:outputText value="Phone :"/><br/>
+            </div>
+    
+</aura:component>

@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <div class = "divclass">
+        <p class="p1class">AccountDetails</p><br></br>
+        <p class="p2class">Name : Brillio</p>
+        <p class="p2class">Industry : Technology</p>
+    
+    <c:AccountDetailsLoc/>
+            </div>
+
+</aura:component>

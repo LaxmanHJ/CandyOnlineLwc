@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Search the Contact" icon-name="standard:contact">
+        <div if:true={errorMsg} style="margin-left: 3%;">
+            <p style="color: red;">{errorMsg}</p>
+        </div>
+
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <lightning-layout-item size="12" small-device-size="10" medium-device-size="8" large-device-size="6" padding="around-small">
+                    <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                    <lightning-input type="text" 
+                                                     label="Enter Contact Name" 
+                                                     onchange={handleContactName} ></lightning-input>
+                            </div>
+                        </div> 
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="2" medium-device-size="2" large-device-size="2" padding="around-small">
+                    <lightning-button label="Search" 
+                                      variant="brand" 
+                                      onclick={handleSearch}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout><br/>
+
+        <!--<div if:true={searchData}>
+            <lightning-datatable data={searchData} 
+                                 columns={columns} 
+                                 key-field="id"
+                                 hide-checkbox-column="true"></lightning-datatable>
+
+    
+        </div>-->
+        <div class="slds-grid slds-wrap" style="padding-left:15px;border:3px;">
+         <template for:each={searchData} for:item="con">
+            <div class="slds-col slds-size_1-of-3" style="border:1px solid black;padding:2px" key={con.Id}>
+                <a key={con.Id} href="https://laxmanjee-dev-ed.lightning.force.com/lightning/r/Contact/0032w00000Jc3VhAAJ/view">
+                   <p key={con.Id}> <img src={personlogo.pic} alt="profile"></p>
+                    <p key={con.Id}>Name : {con.Name}</p>
+                    <p key={con.Id}>Title : {con.Title}</p>
+                    <p key={con.Id}>Email : {con.Email}</p>
+                    <p key={con.Id}>Phone : {con.Phone}</p>
+                </a>
+            </div>
+         </template>
+
+        </div>
+    </lightning-card>
+
+</template>

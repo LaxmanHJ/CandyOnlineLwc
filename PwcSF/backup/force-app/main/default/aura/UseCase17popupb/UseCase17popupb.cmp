@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction"
+                access="global" >
+    <aura:attribute name="recordId" type="String"/>
+        <lightning:recordEditForm objectApiName="Contact" onsuccess="{!c.handleSuccess}">
+            <lightning:messages />
+            <lightning:inputField fieldName="FirstName" />
+            <lightning:inputField fieldName="LastName" />
+            <lightning:inputField fieldName="Birthdate" />
+            <lightning:inputField fieldName="Phone" />
+            <lightning:button aura:id="submit" type="submit" label="Save record" class="slds-m-top_medium" />
+        </lightning:recordEditForm>
+    </aura:component>

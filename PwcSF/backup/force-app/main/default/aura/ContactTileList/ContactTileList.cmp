@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global" controller="contactFilter">
+    <aura:attribute name="contacts" type="list"/>
+    <aura:attribute name="searchkey" type="string"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="url" type="String"/>
+    
+    <aura:handler event="c:Resultevt" action="{!c.getvaluefromfilterContact}"/>
+    <div class="slds-grid slds-wrap" >
+        <aura:iteration items="{!v.contacts}" var="contact">
+            <div class="slds-col slds-size_1-of-3" style="padding:6px">
+                <lightning:navigation aura:id="navId"/>
+                <a onclick="{!c.navigatetocontact}" href="{!v.url}">
+                    <img class="slds-float_left" src="{!$Resource.person}"/>
+                    <p class="slds-truncate" title="{!contact.Name}">{!contact.Name}</p>
+                    <p class="slds-truncate" title="{!contact.Title}">{!contact.Title}</p>
+                    <p class="slds-truncate" title="{!contact.Email}">{!contact.Email}</p>
+                    <p class="slds-truncate" title="{!contact.Phone}">{!contact.Phone}</p>
+                </a>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

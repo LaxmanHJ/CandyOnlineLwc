@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="empName" type="string" default="Lax"/>
+    <aura:attribute name="empSalary" type="Decimal" default="10000"/>
+    <aura:attribute name="empCity" type="string" default="Banglore"/>
+	<aura:registerEvent name="loadMyEvent" type="c:Result"/>
+
+
+    
+    <div class="box">
+        <lightning:input aura:id ="ename" label="Enter Employee Name" value="{!v.empName}"/>
+        <lightning:input  aura:id ="eSalary" label="Enter Salary Name" value="{!v.empSalary}"/>
+        <lightning:input  aura:id ="eCity" label="Enter city Name" value="{!v.empCity}"/>
+    </div>
+    <div class="box1">
+        <lightning:button  class = "btnclass" label="submit" onclick="{!c.handlesubmit}"/>
+         <lightning:button  class = "btnclass" label="cancel" onclick="{!c.handlecancel}"/>
+
+    </div>
+</aura:component>

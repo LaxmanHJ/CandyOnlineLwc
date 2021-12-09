@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute name="msgFromNotifier" type="String"/>
+    <!-- give same name as that of notifier registerEvent name attribute -->
+    <aura:handler name="newCarAccident" event="c:carAccident" action="{!c.handleNotification}"/>
+    <!-- Handler should contains notifier component-->
+    <c:carAccidentNotifier />
+    <div class="divstyle">message from Notifier : <b>{!v.msgFromNotifier}</b></div>
+</aura:component>

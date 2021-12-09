@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Account List From Apex" icon-name="custom:custom63">
+            <div class="slds-m-around_medium">
+                <lightning-layout multiple-rows="false">                
+                    <template if:true={cases.data}>
+                    <template for:each={cases.data} for:item="cas">
+                        <lightning-layout-item padding="around-big" class="backgroundWhite slds-box slds-box_xx-small" key={cas.Id}>
+                        <p>caseNumber:{cas.CaseNumber}</p>
+                        <lightning-button type="submit" variant="brand" label="view" title="view"   class="slds-m-right_x-small"></lightning-button>
+                    </lightning-layout-item>
+                    </template>
+                </template>
+            </lightning-layout>
+
+                <template if:true={cases.error}>
+                    {cases.error}
+                </template>
+            </div>
+        </lightning-card>
+</template>

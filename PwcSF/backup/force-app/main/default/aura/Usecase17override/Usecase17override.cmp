@@ -1,0 +1,7 @@
+<aura:component implements="lightning:actionOverride,force:hasRecordId" access="global" >
+    <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Contact">
+        <div class="slds-var-p-around_xx-large slds-align_absolute-center">
+            <p style="font-size:5vw;">this is overriden</p>
+        </div>
+    </lightning:recordViewForm>
+</aura:component>

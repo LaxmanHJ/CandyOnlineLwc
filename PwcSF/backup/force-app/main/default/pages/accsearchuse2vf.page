@@ -1,0 +1,135 @@
+<apex:page controller="accsearchuse2">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText value="{!search}" label="Enter Account Name"/>
+                <apex:commandButton action="{!showdetails}" value="Get Related Data"/>
+            </apex:pageBlockSection>
+            
+            
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockTable value="{!res}" var="c">
+                    
+                    <apex:column value="{!c.name}"/>
+                    <!--<apex:column value="{!c.contacts}"/>-->
+                    <apex:column headerValue="total contacts">
+                        <!--<apex:outputLabel value="total contacts"/>-->
+                        
+                        <apex:outputpanel id="counter">
+                           <!-- <apex:outputText value="{!sum}" />-->
+                            <apex:actionSupport event="onclick" 
+                                                action="{!showdetails}" 
+                                                rerender="counter1" status="counterStatus"/>
+                            
+                            <apex:outputLink value="accsearch2vf2" onclick="condetails()">{!sum}</apex:outputLink>
+                                
+
+
+                            
+                        </apex:outputpanel>
+                        
+                        
+                    </apex:column>
+                    <apex:column headerValue="Total Opps">
+                        <apex:outputpanel id="o">
+                            <apex:outputText value="{!sum1}" />
+                            <apex:actionSupport event="onclick" 
+                                                action="{!showdetails}" 
+                                                rerender="o1" status="counterStatus"/>
+                            
+                            
+                        </apex:outputpanel>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Total Cases">
+                        <!--<apex:outputLabel value="total contacts"/>-->
+                         <apex:outputpanel id="c">
+                            <apex:outputText value="{!sum2}" />
+                            <apex:actionSupport event="onclick" 
+                                                action="{!showdetails}" 
+                                                rerender="c1" status="counterStatus"/>
+                            
+                        </apex:outputpanel>
+                        
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockTable value="{!res}" var="c1">
+                    
+                    <apex:column value="{!c1.name}"/>
+                    
+                    <apex:column headerValue="FirstName ">
+                        <apex:outputText value="{!firstname}"/>
+                    </apex:column>
+                    <apex:column headerValue="LastName ">
+                        <apex:outputText value="{!lastname}"/>
+                    </apex:column>
+                    <apex:column headerValue="Email ">
+                        <apex:outputText value="{!email}"/>
+                    </apex:column>
+                    <apex:column headerValue="Phone ">
+                        <apex:outputText value="{!phone}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockTable value="{!res1}" var="o">
+                    
+                    <apex:column value="{!o.name}"/>
+                    
+                    <apex:column headerValue="Name ">
+                        <apex:outputText value="{!Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="StageName ">
+                        <apex:outputText value="{!StageName}"/>
+                    </apex:column>
+                    <apex:column headerValue="Amount ">
+                        <apex:outputText value="{!Amount}"/>
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockTable value="{!res2}" var="ca">
+                    
+                    <apex:column value="{!ca.name}"/>
+                    
+                    <apex:column headerValue="Type ">
+                        <apex:outputText value="{!Type}"/>
+                    </apex:column>
+                    <apex:column headerValue="Status ">
+                        <apex:outputText value="{!Status}"/>
+                    </apex:column>
+                    <apex:column headerValue="Origin ">
+                        <apex:outputText value="{!Origin}"/>
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

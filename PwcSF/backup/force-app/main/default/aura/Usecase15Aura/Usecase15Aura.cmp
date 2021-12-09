@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="Usecase16">
+    <aura:attribute name="Contact_name" type="String" />
+    <aura:attribute name="Contact_email" type="String" />
+    <aura:attribute name="Account_name" type="String" />
+    <aura:attribute name="Account_industry" type="String" />
+    <aura:attribute name="Contact_phone" type="String" />
+    <aura:attribute name="acctId" type="Id" />
+    <aura:attribute name="value" type="String" default="false" />
+    
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning:input label="Enter Name: " value="{!v.Contact_name}" />
+            <lightning:input label="Enter Email: " value="{!v.Contact_email}" />
+            <lightning:input aura:id="experience" type="checkbox" label="Is Experienced?" checked="" value="{!v.value}" onchange="{!c.handleChange}" />
+        </div>
+        <div class="slds-col">
+            {!v.body}
+        </div>
+    </div> 
+</aura:component>

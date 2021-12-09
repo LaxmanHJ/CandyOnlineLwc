@@ -1,0 +1,6 @@
+<aura:component >
+    <h1>Firstanme</h1>
+    <p>Dept</p>
+    <p>Id</p>
+	
+</aura:component>

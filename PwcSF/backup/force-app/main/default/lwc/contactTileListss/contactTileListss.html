@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <!--lightning-layout horizontal-align="space" multiple-rows="true"-->
+        <div class="slds-grid slds-wrap">
+         <template if:true={visibleContacts}>
+            <template for:each={visibleContacts} for:item="c">
+                 <div key={c.Id} class="slds-col slds-size_1-of-3" style="padding:10px">   
+                        <c-contact-tiless pass={c}></c-contact-tiless>                       
+                 </div> 
+                </template>
+            </template>
+        </div>
+        <p slot="footer">
+        <c-paginationss records={cons.data} onpassevent={updateContactHandler}></c-paginationss>
+       </p>
+    </lightning-card> 
+</template>

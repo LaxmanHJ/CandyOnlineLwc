@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Wire Service" icon-name="standard:case">
+        <div class="slds-p-around_x-small">
+            <div class="slds-box">
+                <lightning-layout>
+                    <lightning-layout-item size="4" padding="around-small">
+                        <div class="slds-form-element__label">Case Number</div><br/>
+                        <lightning-formatted-text value={casenumber} ></lightning-formatted-text><br/>
+                        <div class="slds-form-element__label">Status</div><br/>
+                        <lightning-formatted-text value={status} ></lightning-formatted-text><br/>
+                        <div class="slds-form-element__label">Subject</div><br/>
+                        <lightning-formatted-phone value={subject}></lightning-formatted-phone><br/>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+    </lightning-card>   
+</template>

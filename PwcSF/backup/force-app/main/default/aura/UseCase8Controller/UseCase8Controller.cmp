@@ -1,0 +1,24 @@
+<aura:component controller="Usecase8ConrollerApex">
+    
+     <aura:attribute name="acc" type="Account"/>
+    <aura:handler action="{!c.doInit}" name="init" value="{!this}"/>
+    
+    <lightning:card iconName="standard:account">
+        <aura:set attribute="title">
+            <p>Account</p>
+            <b><h1></h1></b>
+            <p style="padding-left:15px;">{!v.acc.Name}</p>
+        </aura:set>
+        <br/>
+        <p style="padding-left:35px;color:blue;">Account Name : {!v.acc.Name}</p><br/>
+        <p style="padding-left:35px;color:blue;">Phone : {!v.acc.Phone}</p><br/>
+        <p style="padding-left:35px;color:blue;">Industry : {!v.acc.Industry}</p><br/>
+            
+    
+        </lightning:card>
+
+    
+    
+    <div></div>
+
+</aura:component>

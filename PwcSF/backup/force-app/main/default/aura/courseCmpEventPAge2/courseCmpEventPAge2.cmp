@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="Get_name" type="String"/>    
+    <aura:attribute name="isTrue" type="boolean"/>    
+    
+    <aura:handler event="c:courseCmpEvent" action="{!c.getvaluefromApplicationEvent}"/>
+    
+    <aura:if  isTrue="{!v.isTrue}" >
+        <div style="margin:15px;">
+            
+            <p>	This is  {!v.Get_name}  Lightninig component</p>
+        </div>
+        <aura:set attribute="else">
+            <div style="margin:15px;">
+                
+                <p>This is {!v.Get_name} Lightninig component</p>
+            </div>        
+        </aura:set>
+    </aura:if>
+    
+    
+    
+</aura:component>

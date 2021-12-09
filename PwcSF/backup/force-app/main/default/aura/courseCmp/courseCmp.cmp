@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="input" type="string" default="banglore"/>
+  
+    <aura:registerEvent name="loadMyEvent" type="c:Result"/>
+
+
+    
+    <div class="box">
+        <lightning:input aura:id ="ename" label="Enter Employee Name" value="{!v.input}"/>
+        </div>
+    <div class="box1">
+        <lightning:button  class = "btnclass" label="submit" onclick="{!c.handlesubmit}"/>
+
+    </div>
+</aura:component>

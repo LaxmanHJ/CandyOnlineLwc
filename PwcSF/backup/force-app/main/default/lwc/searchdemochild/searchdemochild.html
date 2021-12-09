@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-grid slds-wrap" style="padding-left:15px;border:3px;">
+         <template for:each={con} for:item="con">
+
+    <div class="slds-col slds-size_1-of-3" style="border:1px solid black;padding:2px" key={con.Id}>
+        <a key={con.Id} href="https://laxmanjee-dev-ed.lightning.force.com/lightning/r/Contact/0032w00000Jc3VhAAJ/view">
+           <p key={con.Id}> <img src={personlogo.pic} alt="profile"></p>
+            <p key={con.Id}>Name : {con.Name}</p>
+            <p key={con.Id}>Title : {con.Title}</p>
+            <p key={con.Id}>Email : {con.Email}</p>
+            <p key={con.Id}>Phone : {con.Phone}</p>
+        </a>
+    </div>  
+</template> 
+    </div> 
+</template>

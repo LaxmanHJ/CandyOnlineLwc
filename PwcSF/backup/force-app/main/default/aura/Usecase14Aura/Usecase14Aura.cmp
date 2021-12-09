@@ -1,0 +1,9 @@
+<aura:component >
+    
+     <ui:inputCheckbox aura:id="checkbox" label="Is Experinced" change="{!c.createButton}"/>
+
+    <div>
+        {!v.body}
+    </div>
+    
+</aura:component>

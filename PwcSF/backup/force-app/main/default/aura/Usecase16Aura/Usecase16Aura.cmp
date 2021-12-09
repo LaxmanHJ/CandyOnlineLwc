@@ -1,0 +1,33 @@
+<aura:component implements="force:appHostable" controller="Usecase16">
+    <aura:attribute name="newAccount" type="Account"
+                    default="{ 'sobjectType': 'Account',
+                     'Name': 'Email',
+                             }"/>
+    <div>
+        <form>
+            <ui:inputText aura:id="AccountName" label="Name"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.newAccount.Name}"
+                          required="true"/>
+            
+            <ui:inputText aura:id="AccountName" label="Email"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.newAccount.Email}"
+                          required="true"/>
+            
+            <lightning:button label="submit"  onclick="{!c.createAccount}"/>
+            
+        </form>
+   </div>
+    
+    <!--<lightning:input type="checkbox" label="Is Experienced" name="ip" onclick="{!c.getDet}"/>
+    <lightning:button label="create a button component" variant="brand" onclick="{!c.createButton}"/>
+    
+    
+    <h1>Company Details</h1>
+    <div>
+       {!v.body}
+    </div>-->
+</aura:component >

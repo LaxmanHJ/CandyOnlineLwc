@@ -1,0 +1,17 @@
+<apex:page controller="DisplayAccountDtlController" >
+    <apex:form >
+       <apex:pageBlock title="Accounts">
+           <apex:pageBlockButtons >
+              <apex:commandButton value="Display Data" action="{!getdata}" />
+           </apex:pageBlockButtons>
+           <apex:pageBlockSection >          
+           <apex:outputLabel value="Enter Account Name" />
+           <apex:inputText value="{!accname}"/>
+           </apex:pageBlockSection>
+           <apex:pageBlockTable value="{!acc}" var="a">
+              <apex:column value="{!a.name}"/>
+              <apex:column value="{!a.industry}"/>
+           </apex:pageBlockTable>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

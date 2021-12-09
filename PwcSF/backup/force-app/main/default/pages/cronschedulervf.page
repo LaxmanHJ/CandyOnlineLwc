@@ -1,0 +1,45 @@
+<apex:page controller="Cronjobusecase">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText value="{!TimeSet}"/>
+                <apex:commandButton value="Schedule" action="schedule"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:outputText >Syntax : Seconds Minutes Hours Day_of_month Month Day_of_week Optional_year
+                </apex:outputText>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection >
+                
+                <apex:pageBlock >
+                    <table border="1px" rules="frames" padding="5px">
+                        <tr>
+                            <th> Expression </th>
+                            <th> Description </th>
+                        </tr>
+                        <tr>
+                            <th> <apex:outputText value="0 0 13 * * ?" /></th>
+                            <th><apex:outputText value="Class runs every day at 1 PM."/></th>
+                        </tr>
+                        <tr>
+                            <th> <apex:outputText value="0 0 22 ? * 6L" /></th>
+                            <th><apex:outputText value="Class runs the last Friday of every month at 10 PM."/></th>
+                        </tr>
+                        <tr>
+                            <th> <apex:outputText value="0 0 10 ? * MON-FRI	" /></th>
+                            <th><apex:outputText value="Class runs Monday through Friday at 10 AM."/></th>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <th> <apex:outputText value="0 0 20 * * ? 2010	" /></th>
+                            
+                            <th><apex:outputText value="Class runs every day at 8 PM during the year 2010."/></th>
+                        </tr>
+                    </table>
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

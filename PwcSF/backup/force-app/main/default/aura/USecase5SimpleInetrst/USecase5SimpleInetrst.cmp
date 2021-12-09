@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<aura:attribute name = 'princ' type = 'Integer' default = '15'></aura:attribute>
+    <aura:attribute name = 'rate' type = 'Integer' default = '20'></aura:attribute>
+    <aura:attribute name = 'time' type = 'Integer'></aura:attribute>
+    <aura:attribute name = "total" type = "Integer"/>
+    <div class="box1">
+        
+        <lightning:input name="input1" label="Enter amount" value="{!v.princ}" />
+        <lightning:input name="input2" label="Enter interest" value="{!v.rate}" />
+        <lightning:input name="input3" label="Enter year" value="{!v.time}" />
+        
+        <lightning:button label = 'Calculate' onclick = '{!c.result}'/>
+        <p>{!v.total}</p>
+    </div>
+</aura:component>
